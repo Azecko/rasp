@@ -6,7 +6,7 @@ export async function POST(request) {
         const response = await fetch('http://localhost:3031/contatos', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json', // Corrected header name
+                'Content-Type': 'application/json', 
             },
             body: JSON.stringify(json),
         });
