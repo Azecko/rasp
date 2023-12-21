@@ -1,0 +1,7 @@
+node_modules
+src/templates/base.html
+src/templates/layouts/layout-default.html
+src/pages/
+files
+build
+dist

@@ -1,0 +1,13 @@
+<div class="container">
+    <h4 class="h3">Globals nunjuks vars</h4>
+    {% for element in globals.example_list %}
+        <div class="row">
+            <div class="col-lg-1">
+                <h5>{{ element.title }}</h5>
+            </div>
+            <div class="col-lg-6">
+                <p>{{ element.text }}</p>
+            </div>
+        </div>
+    {% endfor %}
+</div>

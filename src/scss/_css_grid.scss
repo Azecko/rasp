@@ -1,0 +1,21 @@
+@include make-cssgrid-columns();
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    @each $size, $length in $spacers {
+      .gap-y#{$infix}-#{$size} {
+        row-gap: $length !important;
+      }
+
+      .gap-x#{$infix}-#{$size} {
+        column-gap: $length !important;
+      }
+
+      .gap#{$infix}-#{$size} {
+        gap: $length !important;
+      }
+    }
+  }
+}

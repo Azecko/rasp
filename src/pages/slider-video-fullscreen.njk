@@ -1,0 +1,25 @@
+{% extends 'layouts/layout-fullscreen.njk' %}
+
+{% block content %}
+<div class="swiper-video-container flex-grow-1">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div class="swiper-video">
+                <video class="module-banner-video" muted loop poster="/src/assets/img/fire.jpg" data-src="/src/assets/video/slide01.mp4"></video>
+            </div>
+            <div class="swiper-content">
+                Vidéo 1
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="swiper-video">
+                <video class="module-banner-video" muted loop poster="/src/assets/img/fire.jpg" data-src="/src/assets/video/slide02.mp4"></video>
+            </div>
+            <div class="swiper-content">
+                Vidéo 2
+            </div>
+        </div>
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
+{% endblock %}

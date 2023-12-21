@@ -1,0 +1,53 @@
+{% extends 'layouts/layout-default.njk' %}
+
+{% block content %}
+    {# <p>Ceci est un commentaire</p> #}
+    <div class="d-grid gap-5">
+
+        <div class="container">
+            <div class="alert alert-warning" role="alert">
+                A simple warning alert
+            </div>
+        </div>
+
+        {% include 'components/exemple-macros.njk' %}
+        {% include 'components/exemple-boucle.njk' %}
+        {% include 'components/spacing.njk' %}
+        {% include 'components/ratio-box.njk' %}
+        {% include 'components/image-reveal.njk' %}
+        {% include 'components/swiper-video-fullscreen.njk' %}
+        {% include 'components/swiper.njk' %}
+        <div class="container">
+            <div class="d-grid gap-5">
+                <div>
+                    <h4 class="title h3 mb-4">Image object fit</h4>
+                    <div class="position-relative" style="height:400px;">
+                        <div class="img-cover-container">
+                            <img src="/src/assets/img/fire.jpg">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="title h3 mb-4">Insertion d'images JPG</h4>
+                    <div class="bg-light" style="background-image: url('/src/assets/img/logo-fz.svg')">
+                        <img src="/src/assets/img/fire.jpg" width="300" height="100">
+                    </div>
+                </div>
+                <div>
+                    <h4 class="title h3 mb-4">Insertion d'images PNG</h4>
+                    <div class="bg-light" style="background-image: url('/src/assets/img/logo-fz.svg')">
+                        <img src="/src/assets/img/fire.png" width="300" height="100">
+                    </div>
+                </div>
+                <div>
+                    <h4 class="title h3 mb-4">Include part</h4>
+                    {% include 'components/include.njk' %}
+                </div>
+                <div>
+                    <h4 class="title h3 mb-4">Video avec lancement après le chargement de la page et image placeholder</h4>
+                    <video muted loop poster="/src/assets/img/video-poster.jpg" data-src="/src/assets/video/video.mp4"></video>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

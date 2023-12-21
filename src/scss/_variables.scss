@@ -1,0 +1,99 @@
+$white: #fff;
+$gray-100: #f8f8f8;
+$gray-200: #ececec;
+$gray-300: #e1e1e1;
+$gray-400: #d4d4d4;
+$gray-500: #b3b3b3;
+$gray-600: #747474;
+$gray-700: #4f4f4f;
+$gray-800: #393939;
+$gray-900: #242424;
+$black: #000;
+$tertiary: orange;
+$custom-colors: (
+    'white': $white,
+    'black': $black,
+    'tertiary': $tertiary
+);
+$tertiary-text-emphasis: shade-color($tertiary, 60%);
+$tertiary-bg-subtle: tint-color($tertiary, 80%);
+$tertiary-border-subtle: tint-color($tertiary, 60%);
+
+// Spacing
+$spacer: 1rem;
+
+// Generate spacing values
+@function generate-spacings($base, $max, $step: 0.25) {
+    $spacings: ();
+    $multiplier: 0;
+
+    @for $i from 1 through $max {
+        $spacings: map-merge(
+            $spacings,
+            (
+                $i: $base * $multiplier
+            )
+        );
+        $multiplier: $multiplier + $step;
+    }
+
+    // Add the 0 at the end
+    $spacings: map-merge(
+        $spacings,
+        (
+            0: 0
+        )
+    );
+
+    @return $spacings;
+}
+
+$spacers: generate-spacings($spacer, 50);
+$zindex-max: 30;
+
+// Typography
+$font-size-base: 1rem;
+$font-size-xxs: $font-size-base * 0.625;
+$font-size-xs: $font-size-base * 0.75;
+$font-size-sm: $font-size-base * 0.875;
+$font-size-lg: $font-size-base * 1.125;
+$font-size-xl: $font-size-base * 1.25;
+$font-size-xxl: $font-size-base * 1.375;
+$font-size-xxxl: $font-size-base * 1.5;
+$h1-font-size: $font-size-base * 2.5;
+$h2-font-size: $font-size-base * 2;
+$h3-font-size: $font-size-base * 1.75;
+$h4-font-size: $font-size-base * 1.5;
+$h5-font-size: $font-size-base * 1.25;
+$h6-font-size: $font-size-base;
+$font-sizes: (
+    1: $h1-font-size,
+    2: $h2-font-size,
+    3: $h3-font-size,
+    4: $h4-font-size,
+    5: $h5-font-size,
+    6: $h6-font-size,
+    'xxs': $font-size-xxs,
+    'xs': $font-size-xs,
+    'sm': $font-size-sm,
+    'base': $font-size-base,
+    'lg': $font-size-lg,
+    'xl': $font-size-xl,
+    'xxl': $font-size-xxl,
+    'xxxl': $font-size-xxxl
+);
+
+// Custom
+
+$btn-transition:
+    color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out !default;
+$push-effect-box-shadow:
+    inset 0 3px 0 rgb(255 255 255 / 2.5%),
+    0 1px 1px rgb(0 0 0 / 25%);
+$content-spacer: 3rem;
+$fontawesome-icon-size-base: 1em;
+$fontawesome-icon-weight-base: 400;
+$fontawesome-icon-spacer: 0.25em;

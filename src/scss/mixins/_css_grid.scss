@@ -1,0 +1,106 @@
+// stylelint-disable declaration-no-important
+
+// Margin and Padding
+@mixin make-cssgrid-columns($columns: $grid-columns, $gutter: $grid-gutter-width, $breakpoints: $grid-breakpoints) {
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+      $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+      .grid-flow-row#{$infix} {
+        grid-auto-flow: row;
+      }
+
+      .grid-flow-col#{$infix} {
+        grid-auto-flow: column;
+      }
+
+      .grid-flow-row#{$infix}-dense {
+        grid-auto-flow: row dense;
+      }
+
+      .grid-flow-col#{$infix}-dense {
+        grid-auto-flow: column dense;
+      }
+
+      .auto-cols#{$infix}-auto {
+        grid-auto-columns: auto;
+      }
+
+      .auto-cols#{$infix}-min {
+        grid-auto-columns: min-content;
+      }
+
+      .auto-cols#{$infix}-max {
+        grid-auto-columns: max-content;
+      }
+
+      .auto-rows#{$infix}-fr {
+        grid-auto-rows: minmax(0, 1fr);
+      }
+
+      .auto-rows#{$infix}-auto {
+        grid-auto-rows: auto;
+      }
+
+      .auto-rows#{$infix}-min {
+        grid-auto-rows: min-content;
+      }
+
+      .auto-rows#{$infix}-max {
+        grid-auto-rows: max-content;
+      }
+
+      .auto-rows#{$infix}-fr {
+        grid-auto-rows: minmax(0, 1fr);
+      }
+
+      @if $columns > 0 {
+        @for $i from 1 through $columns {
+          .grid-cols#{$infix}-#{$i} {
+            grid-template-columns: repeat(#{$i}, minmax(0, 1fr))
+          }
+
+          .col-span#{$infix}-#{$i} {
+            grid-column: span #{$i} / span #{$i}
+          }
+
+          .row-span#{$infix}-#{$i} {
+            grid-row: span #{$i} / span #{$i}
+          }
+
+          .col-span#{$infix}-full {
+            grid-column: 1 / -1;
+          }
+
+          .col-grid#{$infix}-auto{
+            grid-column: auto;
+          }
+
+          .col-start#{$infix}-#{$i} {
+            grid-column-start: #{$i};
+          }
+
+          .col-start#{$infix}-auto {
+            grid-column-start: auto;
+          }
+
+          .col-end#{$infix}-#{$i} {
+            grid-column-end: #{$i};
+          }
+
+          .col-end#{$infix}-auto {
+            grid-column-end: auto;
+          }
+
+          .grid-rows#{$infix}-#{$i} {
+            grid-template-rows: repeat(#{$i}, minmax(0, 1fr))
+          }
+
+          .grid-rows#{$infix}-none {
+            grid-template-rows: none;
+          }
+        }
+      }
+    }
+  }
+}

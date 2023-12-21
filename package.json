@@ -1,0 +1,60 @@
+{
+    "name": "integration-boilerplate",
+    "version": "1.0.0",
+    "description": "integration-boilerplate",
+    "private": true,
+    "type": "module",
+    "author": {
+        "name": "Format-Z",
+        "email": "technique@format-z.ch"
+    },
+    "scripts": {
+        "dev": "vite --host",
+        "build": "vite build",
+        "build:contao": "VITE_BUILD_TARGET=contao vite build",
+        "preview": "vite preview",
+        "format": "prettier \"src/**/*.{js,ts,scss}\"",
+        "lint": "eslint \"src/js/**/*.{js,ts}\" --quiet",
+        "lintcss": "npx stylelint \"src/scss/**/*.scss\""
+    },
+    "engines": {
+        "node": ">=20.10.0"
+    },
+    "dependencies": {
+        "@popperjs/core": "^2.11.8",
+        "bootstrap": "^5.3.2",
+        "choices.js": "^10.2.0",
+        "chokidar": "^3.5.3",
+        "gsap": "^3.12.2",
+        "mmenu-js": "^9.3.0",
+        "photoswipe": "^5.4.3",
+        "swiper": "^11.0.5"
+    },
+    "devDependencies": {
+        "@vituum/vite-plugin-nunjucks": "^1.1.0",
+        "autoprefixer": "^10.4.16",
+        "core-js": "^3.33.3",
+        "eslint": "^8.54.0",
+        "eslint-config-prettier": "^9.0.0",
+        "eslint-config-standard": "^17.1.0",
+        "eslint-plugin-import": "^2.29.0",
+        "eslint-plugin-n": "^16.3.1",
+        "eslint-plugin-promise": "^6.1.1",
+        "nunjucks": "^3.2.4",
+        "postcss": "^8.4.31",
+        "prettier": "^3.1.0",
+        "sass": "^1.69.5",
+        "sharp": "^0.33.0",
+        "stylelint": "^15.11.0",
+        "stylelint-config-standard-scss": "^11.1.0",
+        "svgo": "^3.0.4",
+        "vite": "^5.0.4",
+        "vite-plugin-image-optimizer": "^1.1.7",
+        "vituum": "^1.1.0"
+    },
+    "browserslist": [
+        "> 0.3%",
+        "last 2 versions",
+        "not dead"
+    ]
+}
