@@ -1,0 +1,38 @@
+@import 'mmenu-js/src/mmenu';
+
+// CSS vars
+
+.mm-menu {
+    --mm-line-height: 26px;
+    --mm-listitem-size: 50px;
+    --mm-color-border: #{$border-color};
+    --mm-color-text-dimmed: #{$black};
+    --mm-color-text: #{$navbar-light-color};
+    --mm-color-background: #{$light};
+    --mm-color-background-emphasis: #{lighten($light, 50%)};
+    --mm-color-button: #{$navbar-light-color};
+}
+
+// Hide the menu until the document is done loading
+
+#menu-mobile:not(.mm-menu) {
+    display: none;
+}
+
+// Custom hover effect
+
+.mm-listitem__btn:hover,
+.mm-listitem__text:hover {
+    transition: background-color 0.4s ease;
+
+    &:hover {
+        background: var(--mm-color-background-emphasis);
+    }
+}
+
+.mm-wrapper__blocker {
+    overflow: hidden;
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+}

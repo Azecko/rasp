@@ -1,0 +1,106 @@
+// Custom animated burger icon menu
+$burger-color: currentcolor;
+
+.navbar-toggler {
+    padding: 0;
+    border: 0;
+
+    &,
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+.menu-icon-cross {
+    transition: transform 0.5s;
+
+    svg {
+        position: relative;
+        z-index: 1;
+        fill: transparent;
+        stroke-width: 1px;
+        stroke: $burger-color;
+        stroke-dasharray: 170;
+        stroke-dashoffset: 170;
+        transition:
+            stroke-dashoffset 0.5s,
+            transform 0.5s;
+    }
+
+    span {
+        &::before,
+        &::after {
+            transform-origin: 50% 50%;
+        }
+    }
+}
+
+.menu-icon {
+    position: relative;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+
+    span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        width: 22px;
+        height: 2px;
+        background-color: $burger-color;
+        transform: translateX(-50%) translateY(-50%);
+        z-index: 2;
+        transition:
+            background 0.5s,
+            transform 0.5s;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 22px;
+            height: 2px;
+            background-color: $burger-color;
+            transform: translateY(-6px);
+            transition: transform 0.5s;
+        }
+
+        &::after {
+            transform: translateY(6px);
+        }
+    }
+
+    &:hover {
+        span {
+            &::after {
+                transform: translateY(8px);
+            }
+
+            &::before {
+                transform: translateY(-8px);
+            }
+        }
+    }
+
+    .mm-wrapper--opened & {
+        span {
+            background: #0000;
+
+            &::before {
+                transform: translateY(0) rotate(45deg);
+            }
+
+            &::after {
+                transform: translateY(0) rotate(-45deg);
+            }
+        }
+
+        svg {
+            stroke-dashoffset: 0;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "useTabs": false,
+    "tabWidth": 4,
+    "singleQuote": true,
+    "trailingComma": "none",
+    "printWidth": 120,
+    "semi": false,
+    "overrides": [
+        {
+            "files": "*.js",
+            "options": {
+                "tabWidth": 2
+            }
+        },
+        {
+            "files": "*.{html,scss}",
+            "options": {
+                "tabWidth": 4
+            }
+        }
+    ]
+}

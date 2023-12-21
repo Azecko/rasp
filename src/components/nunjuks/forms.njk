@@ -1,0 +1,61 @@
+{% macro random_int(len) -%}
+{% for n in range(len) -%}
+{{ [0,1,2,3,4,5,6,7,8,9]|random }}
+{%- endfor %}
+{%- endmacro %}
+
+{% macro unique_id(count_groups=5, group_len=1, separator='_') -%}
+
+{% set comma = joiner(separator) %}
+{%- for n in range(count_groups) -%}
+{{- comma() -}}
+{{ random_int(group_len) }}
+{%- endfor %}
+
+{%- endmacro %}
+
+
+<!-- Input -->
+
+{% macro input(label,  value='', type='text', placeholder='') %}
+<div>
+    <label class="form-label">{{ label }}</label>
+    <input type="{{ type }}" class="form-control" value="{{ value | escape }}" placeholder="{{ placeholder | escape }}">
+</div>
+{% endmacro %}
+
+
+<!-- Textarea -->
+
+{% macro textarea(label) %}
+<div>
+    <label class="form-label">{{ label }}</label>
+    <textarea class="form-control" rows="4"></textarea>
+</div>
+{% endmacro %}
+
+
+<!-- Checkbox -->
+
+{% macro checkbox(label) %}
+{% set filedid = unique_id() %}
+<div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="check{{ filedid }}">
+    <label class="form-check-label" for="check{{ filedid }}">
+        {{ label }}
+    </label>
+</div>
+{% endmacro %}
+
+
+<!-- Radio -->
+
+{% macro radio(label) %}
+{% set filedid = unique_id() %}
+<div class="form-check">
+    <input class="form-check-input" type="radio" value="" id="check{{ filedid }}">
+    <label class="form-check-label" for="check{{ filedid }}">
+        {{ label }}
+    </label>
+</div>
+{% endmacro %}

@@ -1,0 +1,159 @@
+$utilities: map-merge(
+    $utilities,
+    (
+        'color':
+            map-merge(
+                map-get($utilities, 'color'),
+                (
+                    responsive: true,
+                    values: map-merge(map-get(map-get($utilities, 'color'), 'values'), ($theme-colors))
+                )
+            ),
+        'background-color':
+            map-merge(
+                map-get($utilities, 'background-color'),
+                (
+                    values: map-merge(map-get(map-get($utilities, 'background-color'), 'values'), ($theme-colors))
+                )
+            ),
+        'text-decoration-hover': (
+            property: text-decoration,
+            class: text-decoration,
+            state: hover focus,
+            values: none underline line-through
+        ),
+        'text-color-hover': (
+            property: color,
+            class: text,
+            state: hover focus,
+            values: map-merge(map-get(map-get($utilities, 'color'), 'values'), ($theme-colors)),
+            current-color: currentcolor
+        ),
+        'bg-hover': (
+            property: background-color,
+            class: bg,
+            state: hover focus,
+            values: map-merge(map-get(map-get($utilities, 'color'), 'values'), ($theme-colors))
+        ),
+        'gap-x': (
+            responsive: true,
+            property: grid-column-gap,
+            class: gap-x,
+            values: $spacers
+        ),
+        'gap-y': (
+            responsive: true,
+            property: grid-row-gap,
+            class: gap-y,
+            values: $spacers
+        ),
+        'border': (
+            property: border,
+            values: (
+                null: $border-width solid $border-color,
+                0: 0
+            )
+        ),
+        'border-style': (
+            property: border-style,
+            class: bs,
+            state: hover focus,
+            values: (
+                'dotted': dotted,
+                'dashed': dashed,
+                'solid': solid
+            )
+        ),
+        'border-top-style': (
+            property: border-top-style,
+            class: bs-top,
+            state: hover focus,
+            values: (
+                'dotted': dotted,
+                'dashed': dashed,
+                'solid': solid
+            )
+        ),
+        'border-end-style': (
+            property: border-end-style,
+            class: bs-end,
+            state: hover focus,
+            values: (
+                'dotted': dotted,
+                'dashed': dashed,
+                'solid': solid
+            )
+        ),
+        'border-bottom-style': (
+            property: border-bottom-style,
+            class: bs-bottom,
+            state: hover focus,
+            values: (
+                'dotted': dotted,
+                'dashed': dashed,
+                'solid': solid
+            )
+        ),
+        'border-start-style': (
+            property: border-style,
+            class: bs-start,
+            state: hover focus,
+            values: (
+                'dotted': dotted,
+                'dashed': dashed,
+                'solid': solid
+            )
+        ),
+        'position': (
+            responsive: true,
+            property: position,
+            values: static relative absolute fixed sticky
+        ),
+        'font-weight': (
+            property: font-weight,
+            class: fw,
+            values: (
+                light: $font-weight-light,
+                lighter: $font-weight-lighter,
+                normal: $font-weight-normal,
+                bold: $font-weight-bold,
+                bolder: $font-weight-bolder
+            )
+        ),
+        'border-color': (
+            property: border-color,
+            class: border,
+            values:
+                map-merge(
+                    $theme-colors,
+                    (
+                        'white': $white,
+                        current-color: currentcolor
+                    )
+                )
+        ),
+        'overflow-x': (
+            property: overflow-x,
+            values: auto hidden visible scroll
+        ),
+        'font-size': (
+            responsive: true,
+            rfs: true,
+            property: font-size,
+            class: fs,
+            values: $font-sizes
+        ),
+        'width': (
+            responsive: true,
+            property: width,
+            class: w,
+            values: (
+                25: 25%,
+                50: 50%,
+                75: 75%,
+                100: 100%,
+                auto: auto
+            )
+        )
+    )
+);
