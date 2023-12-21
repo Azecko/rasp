@@ -1,0 +1,15 @@
+{% extends 'layouts/base.njk' %}
+
+{% block body %}
+    <div id="app">
+        {% include 'components/elements/header.njk' %}
+
+        <main role="main" class="py-5">
+            {% block content %}{% endblock %}
+        </main>
+
+        {% include 'components/elements/footer.njk' %}
+    </div>
+
+    {% include 'components/mmenu.njk' %}
+{% endblock %}

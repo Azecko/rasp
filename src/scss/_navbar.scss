@@ -1,0 +1,8 @@
+.navbar {
+    position: fixed;
+    z-index: $zindex-offcanvas - 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--#{$prefix}navbar-height);
+}

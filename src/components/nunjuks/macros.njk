@@ -1,0 +1,5 @@
+{% macro button(text, color="primary", link="#") %}
+
+  <a href="{{ link }}" class="btn btn-{{ color }}">{{ text }}</a>
+
+{% endmacro %}

@@ -1,0 +1,44 @@
+image: node:20.10.0
+
+# Deploy to Gitlab pages
+pages:
+    stage: deploy
+    cache:
+        key:
+            files:
+                - package-lock.json
+            prefix: npm
+        paths:
+            - node_modules/
+    script:
+        - node -v
+        - npm -v
+        - npm install
+        - npm run build
+        - cp -a dist/. public/
+    artifacts:
+        paths:
+            - public
+    only:
+        - test
+
+# Deploy to production contao
+deploy_production:
+    stage: deploy
+    only:
+        - main
+    before_script:
+        - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+        - eval $(ssh-agent -s)
+        - echo "$DEPLOY_SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+        - mkdir -p ~/.ssh
+        - chmod 700 ~/.ssh
+        - ssh-keyscan $DEPLOY_SSH_HOST >> ~/.ssh/known_hosts
+        - chmod 644 ~/.ssh/known_hosts
+    script:
+        - node -v
+        - npm -v
+        - npm install
+        - npm run build:contao
+        - ls
+        - scp -v -r build/ $DEPLOY_SSH_USER@$DEPLOY_SSH_HOST:$DEPLOY_SSH_PATH

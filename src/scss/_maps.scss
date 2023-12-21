@@ -1,0 +1,14 @@
+// Used to generate custom utilities
+
+$custom-theme-colors-text: (
+    'tertiary': $tertiary-text-emphasis
+);
+$theme-colors-text: map-merge($theme-colors-text, $custom-theme-colors-text);
+$custom-theme-colors-bg-subtle: (
+    'tertiary': $tertiary-bg-subtle
+);
+$theme-colors-bg-subtle: map-merge($theme-colors-bg-subtle, $custom-theme-colors-bg-subtle);
+$custom-theme-colors-border-subtle: (
+    'tertiary': $tertiary-border-subtle
+);
+$theme-colors-border-subtle: map-merge($theme-colors-border-subtle, $custom-theme-colors-border-subtle);

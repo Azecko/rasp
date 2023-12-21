@@ -1,0 +1,45 @@
+:root {
+    --#{$prefix}navbar-height: 100px;
+    --shadow-hue: 0deg;
+    --shadow-saturation: 0%;
+    --shadow-lightness: 50%;
+}
+
+html,
+body {
+    position: relative;
+    height: 100%;
+}
+
+body {
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+figure {
+    margin: 0;
+}
+
+p,
+ol,
+ul {
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+footer {
+    margin-top: auto;
+}
+
+#app {
+    padding-top: var(--#{$prefix}navbar-height);
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
