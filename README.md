@@ -1,6 +1,6 @@
-# Integration boilerplate
+# rasp
 
-> Gitlab pages: https://formatz.gitlab.io/integration-boilerplate
+> Gitlab pages: https://formatz.gitlab.io/rasp
 
 ## Requirements
 
@@ -8,19 +8,17 @@
 
 ## Creating a new project
 
-**Replace `your-project-name` with the name of your project. (kebab-case)**
+**Replace `rasp` with the name of your project. (kebab-case)**
 
 ```bash
-git clone git@gitlab.com:formatz/integration-boilerplate.git your-project-name
-cd your-project-name
+git clone git@gitlab.com:formatz/rasp.git rasp
+cd rasp
 
-# run setup script
-./setup.sh
 
 # setup git
 git add .
 git commit -m ":tada:"
-git remote add origin git@gitlab.com:formatz/your-project-name.git
+git remote add origin git@gitlab.com:formatz/rasp.git
 git push origin main
 ```
 
@@ -69,7 +67,7 @@ Anything in the `public` folder will be copied to the `build` folder.
 
 ### Gitlab pages (branch test)
 
-When pushing/merging into `test`, the pipeline will build the project and deploy it to gitlab pages. The url will be `https://formatz.gitlab.io/your-project-name`.
+When pushing/merging into `test`, the pipeline will build the project and deploy it to gitlab pages. The url will be `https://formatz.gitlab.io/rasp`.
 
 ### Contao website (branch main)
 
