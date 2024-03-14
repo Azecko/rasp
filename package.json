@@ -1,7 +1,7 @@
 {
-    "name": "integration-boilerplate",
+    "name": "rasp",
     "version": "1.0.0",
-    "description": "integration-boilerplate",
+    "description": "rasp",
     "private": true,
     "type": "module",
     "author": {

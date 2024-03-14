@@ -1,2 +1,2 @@
 /* eslint-disable */
-import * as bootstrap from 'bootstrap/dist/js/bootstrap.bundle'
+import * as bootstrap from 'bootstrap'
