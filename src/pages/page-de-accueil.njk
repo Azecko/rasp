@@ -1,0 +1,98 @@
+{% extends 'layouts/layout-default.njk' %}
+{% block content %}
+<style>
+    body, html {
+        height: 100%;
+        margin: 0;
+        font-family: 'Helvetica Neue', sans-serif;
+    }
+
+    .carousel-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    .carousel-text h1 {
+        font-size: 3.5rem;
+        color: #fff;
+    }
+
+    .carousel-text p {
+        font-size: 1.5rem;
+        color: black;
+    }
+    
+    .product-container {
+        padding: 20px;
+    }
+    
+    .product-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .product-card {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: center;
+        width: calc(25% - 20px); /* 25% width for each product card with 20px gap */
+    }
+    
+    .product-card img {
+        max-width: 100%;
+        height: auto;
+    }
+</style>
+
+
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        {% for i in range(0, 6) %}
+            <div class="carousel-item {% if i == 0 %}active{% endif %}">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="carousel-img">
+                            <!-- Insert product image here -->
+                            <img src="https://images.snowleader.com/cdn-cgi/image/f=auto,fit=scale-down,q=85/https://images.snowleader.com/media/catalog/product/cache/1/image/0dc2d03fe217f8c83829496872af24a0/s/e/serviette-tek-towel-bouclette-sage-configurable-seatosum-seat00608_01.jpg"
+                             class="d-block w-100"
+                             alt="Product Image"
+                             >
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="carousel-text">
+                            <!-- Insert product description and price here -->
+                            <h3>Product Name</h3>
+                            <p>Description of the product goes here.</p>
+                            <p>Prix</p>
+                            <button class="btn btn-primary">Ver Detalhes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<!-- Product List -->
+<div class="container product-container">
+    <h2 class="mt-4">Derniers noveuatés</h2>
+    <div class="product-list">
+        {% for i in range(0,12) %}
+            {% include 'components/product-box/product-box.njk' %}
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
