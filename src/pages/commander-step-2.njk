@@ -1,0 +1,30 @@
+{% extends 'layouts/layout-default.njk' %}
+
+{% block content %}
+    <div class="container-fluid">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item active">Adresse</li>
+                <li class="breadcrumb-item">Livraison</li>
+                <li class="breadcrumb-item" aria-current="page">Paiement</li>
+                <li class="breadcrumb-item" aria-current="page">Récapitulatif</li>
+            </ol>
+        </nav>
+        <br>
+        <h2>Mode de livraison</h2>
+        <h6>Sélectionner un mode de livraison.</h6>
+        <div class="d-flex gap-10">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="shippingModes" id="posteMethod" checked>
+                <label class="form-check-label" for="posteMethod">
+                  Poste: 5.00 CHF
+                </label>
+            </div>
+        </div>
+
+        <div class="mt-10">
+            <button class="btn btn-primary">Retour</button>
+            <button class="btn btn-primary">Continuer</button>
+        </div>
+    </div>
+{% endblock %}
