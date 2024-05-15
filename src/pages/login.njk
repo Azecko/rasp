@@ -1,0 +1,21 @@
+{% extends 'layouts/layout-default.njk' %}
+
+{% block content %}
+    <div class="container-fluid d-flex flex-column align-items-center gap-6 justify-content-center" style="height: 75vh;">
+        <h1>Login</h1>
+        <div class="input-group mb-3 w-25">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="username">Nom d'utilisateur</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Username" aria-describedby="username">
+        </div>
+        <div class="input-group mb-3 w-25">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="password">Mot de passe</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Password" aria-describedby="password">
+        </div>
+        <a class="btn btn-primary">Se connecter</a>
+        <a href="#">Mot de passe oublié ?</a>
+    </div>
+{% endblock %}
