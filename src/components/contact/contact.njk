@@ -1,33 +1,38 @@
 <div style="margin: auto;">
-    <b>Formulaire de contact</b>
-    <br><br>
+    <h1>Contact</h1>
     <table style="width: 100%;">
         <tr>
             <td style="width: 50%;">
                 <form>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="inputName">Nom</label>
-                            <input type="text" class="form-control" id="inputName" placeholder="Nom">
-                        </div>
-                        <div class="form-group">
-                            <label for="inputFirstName">Prénom</label>
-                            <input type="text" class="form-control" id="inputFirstName" placeholder="Prénom">
-                        </div>
+                    <div class="input-group mb-3 widget widget-text mandatory">
+                        <label for="ctrl_1" class="input-group-prepend mandatory">
+                            <span class="input-group-text">Nom<span class="mandatory">*</span></span>
+                        </label>
+                        <input type="text" name="Nom" id="ctrl_1" class="form-control text mandatory" value="" required>
                     </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="inputEmail">Email</label>
-                            <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-                        </div>
-                        <div class="form-group">
-                            <label for="inputPhone">Téléphone</label>
-                            <input type="number" class="form-control" id="inputPhone" placeholder="Téléphone">
-                        </div>
+                    <div class="input-group mb-3 widget widget-text mandatory">
+                        <label for="ctrl_2" class="input-group-prepend mandatory">
+                            <span class="input-group-text">Prénom<span class="mandatory">*</span></span>
+                        </label>
+                        <input type="text" name="Prenom" id="ctrl_2" class="form-control text mandatory" value="" required>
                     </div>
-                    <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Message</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <div class="input-group mb-3 widget widget-text mandatory">
+                        <label for="ctrl_3" class="input-group-prepend mandatory">
+                            <span class="input-group-text">Email<span class="mandatory">*</span></span>
+                        </label>
+                        <input type="email" name="Email" id="ctrl_3" class="form-control text mandatory" value="" required>
+                    </div>
+                    <div class="input-group mb-3 widget widget-text">
+                        <label for="ctrl_4" class="input-group-prepend">
+                            <span class="input-group-text">Téléphone<span class="mandatory">*</span></span>
+                        </label>
+                        <input type="tel" name="Telephone" id="ctrl_4" class="form-control text" value="">
+                    </div>
+                    <div class="input-group mb-3 widget widget-textarea mandatory">
+                        <label for="ctrl_5" class="input-group-prepend mandatory">
+                            <span class="input-group-text">Message<span class="mandatory">*</span></span>
+                        </label>
+                        <textarea name="Message" id="ctrl_5" class="form-control text mandatory"  rows="4" cols="40"  required></textarea>
                     </div>
                     <br>
                     <button type="submit" class="btn btn-primary">Envoyer</button>
@@ -35,7 +40,7 @@
             </td>
             <td style="width: 50%;">
                 <p style="text-align: center; position: relative !important; top: -25px;">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2740.516708678711!2d7.0370289!3d46.616553200000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478e629983d61eab%3A0x3d52233ba5171a80!2sCh.%20des%20Prairies%2012%2C%201630%20Bulle!5e0!3m2!1sfr!2sch!4v1715697040886!5m2!1sfr!2sch" width="500" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5490.493392074096!2d6.617756976369045!3d46.52301996217332!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478c2e29782e10b5%3A0x194ec775b80adba5!2sEPSIC%20-%20%C3%89cole%20Professionnelle!5e0!3m2!1sfr!2sch!4v1715756947662!5m2!1sfr!2sch" width="500" height="320" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </p>
             </td>
         </tr>
@@ -43,7 +48,7 @@
     <hr>
     <div>
         <a>info@serviok.ch</a><br>
-        <a>+41 78 927 11 93</a><br>
-        <a>Ch. des Prairies 12, 1630 Bulle</a>
+        <a>+41 21 316 58 58</a><br>
+        <a>Rue de Genève 63, 1004 Lausanne</a>
     </div>
 </div>
