@@ -1,0 +1,58 @@
+{% extends 'layouts/layout-default.njk' %}
+
+{% block content %}
+    <div class="container-fluid">
+        <h1>Panier</h1>
+        <div class="row gap-10">
+            <div class="card" style="width: 20rem;">
+                <img class="card-img-top" style="height: 200px" src="https://images.snowleader.com/cdn-cgi/image/f=auto,fit=scale-down,q=85/https://images.snowleader.com/media/catalog/product/cache/1/image/0dc2d03fe217f8c83829496872af24a0/s/e/serviette-tek-towel-bouclette-sage-configurable-seatosum-seat00608_01.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title"><a href="/produits/serviette-classique">Serviette classique</a></h5>
+                  <div class="d-flex flex-row justify-content-between gap-6">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Quantité</span>
+                        <input type="number" class="form-control" aria-describedby="basic-addon1">
+                    </div>
+                    <a class="btn btn-danger d-flex align-items-center">
+                        <i class="fa-solid fa-trash"></i>
+                    </a>
+                  </div>
+                </div>
+            </div>
+            <div class="card" style="width: 20rem;">
+                <img class="card-img-top" style="height: 200px" src="https://images.snowleader.com/cdn-cgi/image/f=auto,fit=scale-down,q=85/https://images.snowleader.com/media/catalog/product/cache/1/image/0dc2d03fe217f8c83829496872af24a0/s/e/serviette-tek-towel-bouclette-sage-configurable-seatosum-seat00608_01.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title"><a href="/produits/serviette-classique">Serviette classique</a></h5>
+                  <div class="d-flex flex-row justify-content-between gap-6">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Quantité</span>
+                        <input type="number" class="form-control" aria-describedby="basic-addon1">
+                    </div>
+                    <a class="btn btn-danger d-flex align-items-center">
+                        <i class="fa-solid fa-trash"></i>
+                    </a>
+                  </div>
+                </div>
+            </div>
+        </div>
+        
+        <table class="table w-50 mt-10">
+            <thead>
+              <tr>
+                <th scope="col">Sous-total de la commande</th>
+                <th scope="col">TVA</th>
+                <th scope="col">Total de la commande</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>40.00 CHF</td>
+                <td>8.1% (3.00 CHF)</td>
+                <th>40.00 CHF</th>
+              </tr>
+            </tbody>
+        </table>
+
+        <a class="btn btn-success">Commander</a>
+    </div>
+{% endblock %}
