@@ -36,7 +36,7 @@ export default defineConfig(() => {
     assetsDir = 'assets'
     rollupOptions = undefined
   } else if (buildTarget === 'contao') {
-    base = '/build/'
+    base = '/files/build/'
     outDir = './build'
     assetsDir = 'assets'
     rollupOptions = {
